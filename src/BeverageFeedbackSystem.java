@@ -13,12 +13,14 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
 
     public BeverageFeedbackSystem() {
         initComponents();
-
-        card = (CardLayout) pnlLayout.getLayout();
-
         this.setResizable(false);
-        this.setMinimumSize(new java.awt.Dimension(695, 510));
-        this.setMaximumSize(new java.awt.Dimension(695, 510));
+        card = (CardLayout) pnlContent.getLayout();
+
+        pnlContent.add(pnlHome, "HOME");
+        pnlContent.add(pnlSubmit, "SUBMIT");
+        pnlContent.add(pnlValidate, "VALID");
+        pnlContent.add(pnlRoute, "ROUTE");
+        pnlContent.add(pnlDashboard, "DASHBD");
 
     }
 
@@ -40,7 +42,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         btnValid = new javax.swing.JButton();
         btnRoute = new javax.swing.JButton();
         btnDashboard = new javax.swing.JButton();
-        pnlLayout = new javax.swing.JPanel();
+        pnlContent = new javax.swing.JPanel();
         pnlHome = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -51,11 +53,6 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         pnlSubmit = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -103,6 +100,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         pnlDashboard = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,6 +133,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         btnHome.setText("Home");
+        btnHome.setActionCommand("HOME");
         btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHomeActionPerformed(evt);
@@ -142,6 +141,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         });
 
         btnSubmit.setText("Submit");
+        btnSubmit.setActionCommand("SUBMIT");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
@@ -149,6 +149,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         });
 
         btnValid.setText("Validate");
+        btnValid.setActionCommand("VALID");
         btnValid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnValidActionPerformed(evt);
@@ -156,6 +157,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         });
 
         btnRoute.setText("Route");
+        btnRoute.setActionCommand("ROUTE");
         btnRoute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRouteActionPerformed(evt);
@@ -163,6 +165,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         });
 
         btnDashboard.setText("Dashboard");
+        btnDashboard.setActionCommand("DASHBD");
         btnDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDashboardActionPerformed(evt);
@@ -197,7 +200,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
-        pnlLayout.setLayout(new java.awt.CardLayout());
+        pnlContent.setLayout(new java.awt.CardLayout());
 
         jButton6.setText("Home");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -207,6 +210,11 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         });
 
         jButton7.setText("Validate");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Submit");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -216,8 +224,18 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         });
 
         jButton9.setText("Route");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("Dashboard");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel3.setText("System Flow Overview");
@@ -226,49 +244,21 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
 
         jLabel5.setText("HOW IT WORKS");
 
-        jLabel6.setText("① Submit — Select a beverage, give 1–5 stars, and write a comment.");
-
-        jLabel7.setText("② Validate — System checks completeness and filters spam automatically.");
-
-        jLabel8.setText("③ Analyse — NLP scores tone as Positive, Neutral, or Negative.");
-
-        jLabel9.setText("④ Route — Rating & sentiment determine: Urgent escalation, Review, or Resolved.");
-
-        jLabel10.setText("⑤ Dashboard — All data feeds live analytics with trends and top beverage rankings.");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(394, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addContainerGap())
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlHomeLayout = new javax.swing.GroupLayout(pnlHome);
@@ -302,7 +292,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         pnlHomeLayout.setVerticalGroup(
             pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHomeLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -315,12 +305,12 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(21, 21, 21))
         );
 
-        pnlLayout.add(pnlHome, "card6");
+        pnlContent.add(pnlHome, "card6");
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel11.setText("Share Your Experience");
@@ -336,6 +326,11 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         jLabel15.setText("YOUR COMMENT");
 
         btnSbmtFB.setText("Submit Feedback");
+        btnSbmtFB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSbmtFBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -396,10 +391,10 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        pnlLayout.add(pnlSubmit, "card5");
+        pnlContent.add(pnlSubmit, "card5");
 
         jLabel16.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         jLabel16.setText("Validation & Sentiment Analysis");
@@ -525,6 +520,11 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         );
 
         jButton1.setText("Proceed to Routing");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlValidateLayout = new javax.swing.GroupLayout(pnlValidate);
         pnlValidate.setLayout(pnlValidateLayout);
@@ -566,10 +566,10 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        pnlLayout.add(pnlValidate, "card4");
+        pnlContent.add(pnlValidate, "card4");
 
         jLabel28.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jLabel28.setText("Routing Logic");
@@ -706,7 +706,7 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
         pnlRouteLayout.setVerticalGroup(
             pnlRouteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRouteLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -720,15 +720,22 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnvwDash)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
-        pnlLayout.add(pnlRoute, "card3");
+        pnlContent.add(pnlRoute, "card3");
 
         jLabel38.setFont(new java.awt.Font("Serif", 1, 20)); // NOI18N
         jLabel38.setText("Analytics Dashboard");
 
         jLabel39.setText("Live stats from all submitted feedback");
+
+        jButton2.setText("CLOSE");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlDashboardLayout = new javax.swing.GroupLayout(pnlDashboard);
         pnlDashboard.setLayout(pnlDashboardLayout);
@@ -736,9 +743,11 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
             pnlDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDashboardLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(pnlDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE))
+                .addGroup(pnlDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         pnlDashboardLayout.setVerticalGroup(
@@ -748,53 +757,80 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
                 .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel39)
-                .addContainerGap(357, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(17, 17, 17))
         );
 
-        pnlLayout.add(pnlDashboard, "card2");
+        pnlContent.add(pnlDashboard, "card2");
 
-        getContentPane().add(pnlLayout, java.awt.BorderLayout.CENTER);
+        getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
 
-        card.show(pnlLayout, "SUBMIT");
+        card.show(pnlContent, "SUBMIT");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        
+        card.show(pnlContent, "SUBMIT");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btnvwDashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvwDashActionPerformed
-
+        card.show(pnlContent, "DASHBD");
     }//GEN-LAST:event_btnvwDashActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
 
-        card.show(pnlLayout, "HOME");
+        card.show(pnlContent, "HOME");
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnValidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidActionPerformed
 
-        card.show(pnlLayout, "VALID");
+        card.show(pnlContent, "VALID");
     }//GEN-LAST:event_btnValidActionPerformed
 
     private void btnRouteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRouteActionPerformed
 
-        card.show(pnlLayout, "ROUTE");
+        card.show(pnlContent, "ROUTE");
     }//GEN-LAST:event_btnRouteActionPerformed
 
     private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
 
-        card.show(pnlLayout, "DASHBOARD");
+        card.show(pnlContent, "DASHBD");
     }//GEN-LAST:event_btnDashboardActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        card.show(pnlLayout, "HOME");
+        card.show(pnlContent, "HOME");
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void btnSbmtFBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSbmtFBActionPerformed
+        card.show(pnlContent, "VALID");
+    }//GEN-LAST:event_btnSbmtFBActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        card.show(pnlContent, "VALID");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        card.show(pnlContent, "ROUTE");
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        card.show(pnlContent, "DASHBD");
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        card.show(pnlContent, "ROUTE");      
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -831,13 +867,13 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
     private javax.swing.JButton btnvwDash;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -871,10 +907,6 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -888,9 +920,9 @@ public class BeverageFeedbackSystem extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel pnlContent;
     private javax.swing.JPanel pnlDashboard;
     private javax.swing.JPanel pnlHome;
-    private javax.swing.JPanel pnlLayout;
     private javax.swing.JPanel pnlRoute;
     private javax.swing.JPanel pnlSubmit;
     private javax.swing.JPanel pnlValidate;
