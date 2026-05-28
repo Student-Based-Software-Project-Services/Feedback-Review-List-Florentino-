@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/frames/RoleSelection.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/frames/AdminLogin.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/frames/SurveyForm.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/frames/AdminDashboard.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/dao/RespondentDAO.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/dao/SurveyResponseDAO.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/dao/AdminDAO.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/model/Respondent.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/model/SurveyResponse.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/util/Validator.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/util/DBConnection.java</file>
-            <file>file:/C:/Users/Carlo%20Jay/OneDrive/Documents/NetBeansProjects/Feedback%20Review%20List%20(Florentino)/src/Main.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
